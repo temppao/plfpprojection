@@ -4,4 +4,3 @@ numpy
 plotly
 datetime
 statsmodels
-sklearn
