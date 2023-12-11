@@ -137,7 +137,7 @@ with hier:
     st.session_state.expand_all = not st.session_state.expand_all
     
   for column in df_byindustry:
-    with st.expander(column, expanded=getattr(state, "expand_all", False)):
+    with st.expander(column, expanded=getattr(st.session_state, "expand_all", False)):
       model_byindustry = ARIMA(train_df_byindustry[industry[n]], order=arima_industry[n], freq='QS-OCT')
       model_fit_byindustry = model_byindustry.fit()
       
