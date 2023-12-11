@@ -4,4 +4,4 @@ numpy
 plotly
 datetime
 statsmodels
-scikit-learn
+sklearn==0.24.2
