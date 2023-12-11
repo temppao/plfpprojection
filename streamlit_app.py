@@ -131,9 +131,10 @@ with hier:
   
   st.subheader('Forecast Period: January 2018 to October 2021')
   
-  state = st.session_state
+  if 'expand_all' not in st.session_state:
+    st.session_state.expand_all = False
   if st.button('Expand/Collapse All'):
-    state.expand_all = st.session_state.expand_all = not st.session_state.expand_all
+    st.session_state.expand_all = not st.session_state.expand_all
     
   for column in df_byindustry:
     with st.expander(column, expanded=getattr(state, "expand_all", False)):
